@@ -9,17 +9,33 @@
     <body class='bg-info-subtle'>
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries
+                <div class="col-lg-4 col-md-6">
+                    <div class="d-flex flex-row">
+                        <div class="p-2">
+                            <button type="button" class="btn btn-primary">Tambah</button>
+                            <button type="button" class="btn btn-secondary">Import</button>
+                            <button type="button" class="btn btn-success">Export</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries
+                <div class="col-lg-4 col-md-6">
+                    <div class="d-flex flex-row">
+                        <div class="p-2">
+                            <input type="text" class="form-control" id="inputSearch" placeholder="Input Pencarian">
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries
+                <div class="col-lg-4 col-md-12">
+                    <div class="d-flex flex-row">
+                        <div class="p-2">
+                            <select class="form-select">
+                                <option selected>Pemilihan Tahun</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
