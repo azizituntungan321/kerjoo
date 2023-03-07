@@ -36,39 +36,52 @@ class CutiController extends Controller
 
             $this->cutiRepository->storeCuti($request->all());
             return response()->json([
-                'status' => 'SUCCESS',
-                'message' => 'SUCCESS STORE DATA',
+                'status' => 'success',
+                'message' => 'success store data',
             ], 200);
         } catch (\Throwable $th) {
             return response()->json([
-                'status' => 'FAIL',
-                'message' => 'FAIL STORE DATA',
-            ], 200);
+                'status' => 'fail',
+                'message' => 'fail store data',
+            ], 500);
         }
     }
 
-    public function show()
-    {
-        //
+    public function show(){
+        try {
+            $data = $this->cutiRepository->allCuti();
+            return response()->json([
+                'status' => 'success',
+                'message' => 'success get data',
+                'data' => $data,
+            ], 200);
+        } catch (\Throwable $th) {
+            return response()->json([
+                'status' => 'fail',
+                'message' => 'fail get data',
+            ], 500);
+        }
     }
 
-    public function edit($id)
-    {
-        $category = $this->cutiRepository->findCategory($id);
-    }
-
-    public function update(Request $request, $id)
-    {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'slug' => 'required|string|max:255',
-        ]);
-
-        $this->cutiRepository->updateCategory($request->all(), $id);
-    }
-
-    public function destroy($id)
-    {
-        $this->cutiRepository->destroyCategory($id);
+    public function find($id){
+        try {
+            $data = $this->cutiRepository->findCuti($id);
+            if(!$data){
+                return response()->json([
+                    'status' => 'success',
+                    'message' => 'data not found',
+                ], 404);
+            }
+            return response()->json([
+                'status' => 'success',
+                'message' => 'success get data',
+                'data' => $data,
+            ], 200);
+        } catch (\Throwable $th) {
+            return response()->json([
+                'status' => 'fail',
+                'message' => 'fail get data',
+            ], 500);
+        }
     }
 }

@@ -22,3 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/annual-leaves',[CutiController::class, 'store']);
 Route::get('/annual-leaves',[CutiController::class, 'show']);
+Route::get('/annual-leaves/{id}',[CutiController::class, 'find']);
