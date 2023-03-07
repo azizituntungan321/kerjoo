@@ -13,14 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_cuti', function (Blueprint $table) {
+        Schema::create('ref_cuti', function (Blueprint $table) {
             $table->id();
             $table->string('id_user');
-            $table->date('tanggal');
-            $table->integer('jumlah_hari');
-            $table->text('alasan')->nullable();
-            $table->string('status')->default('N')->nullable();
-            $table->text('ket')->nullable();
+            $table->string('tahun');
+            $table->integer('cuti_belum_dipakai');
+            $table->integer('cuti_sudah_dipakai');
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cuti');
+        Schema::dropIfExists('ref_cuti');
     }
 };
